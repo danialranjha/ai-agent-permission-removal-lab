@@ -1,0 +1,26 @@
+[
+  {
+    "detected": true,
+    "errors": 0,
+    "failed_tests": [
+      "test_experiment.ExperimentTests.test_baseline_coverage_redundancy",
+      "test_experiment.ExperimentTests.test_overlap_is_not_reduced_access"
+    ],
+    "failures": 2,
+    "mutation": "skip_strict_reduction",
+    "passed": false,
+    "tests_run": 12
+  },
+  {
+    "detected": true,
+    "errors": 0,
+    "failed_tests": [
+      "test_experiment.ExperimentTests.test_bad_baseline_output",
+      "test_experiment.ExperimentTests.test_missing_baseline_oracle"
+    ],
+    "failures": 2,
+    "mutation": "skip_baseline_acceptance",
+    "passed": false,
+    "tests_run": 12
+  }
+]

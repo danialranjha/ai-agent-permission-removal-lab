@@ -1,0 +1,1249 @@
+{
+  "expected_report": "total=5\n",
+  "joint_removal_counterexample": {
+    "accepted": false,
+    "authority": [
+      "write:report"
+    ],
+    "error": "no readable task input",
+    "events": [
+      {
+        "allowed": false,
+        "operation": "read:sales"
+      },
+      {
+        "allowed": false,
+        "operation": "read:copy"
+      }
+    ],
+    "final_resource_sha256": "579e4823073c297b68c2b9ede5f4eb67f346ce1c713bc24fb83429e486b37dce",
+    "initial_state_sha256": "579e4823073c297b68c2b9ede5f4eb67f346ce1c713bc24fb83429e486b37dce",
+    "oracle_state": "valid",
+    "output": null,
+    "probes": {
+      "exec:runtime": false,
+      "read:copy": false,
+      "read:notes": false,
+      "read:sales": false,
+      "tool:a": false,
+      "tool:b": false,
+      "write:report": true
+    },
+    "task_output_matches": false
+  },
+  "operation_universe": [
+    "exec:runtime",
+    "read:copy",
+    "read:notes",
+    "read:sales",
+    "tool:a",
+    "tool:b",
+    "write:report"
+  ],
+  "scenarios": [
+    {
+      "baseline_operations": [
+        "write:report"
+      ],
+      "deletions": [
+        {
+          "branch": {
+            "accepted": true,
+            "authority": [
+              "read:sales",
+              "write:report"
+            ],
+            "error": null,
+            "events": [
+              {
+                "allowed": true,
+                "operation": "read:sales"
+              },
+              {
+                "allowed": true,
+                "operation": "write:report"
+              }
+            ],
+            "final_resource_sha256": "579e4823073c297b68c2b9ede5f4eb67f346ce1c713bc24fb83429e486b37dce",
+            "initial_state_sha256": "579e4823073c297b68c2b9ede5f4eb67f346ce1c713bc24fb83429e486b37dce",
+            "oracle_state": "valid",
+            "output": "total=5\n",
+            "probes": {
+              "exec:runtime": false,
+              "read:copy": false,
+              "read:notes": false,
+              "read:sales": true,
+              "tool:a": false,
+              "tool:b": false,
+              "write:report": true
+            },
+            "task_output_matches": true
+          },
+          "naive_witness": true,
+          "removed_grant": "directory_read",
+          "removed_operations": [
+            "read:notes"
+          ],
+          "retained_grants": [
+            "file_read"
+          ],
+          "strict_witness": true
+        },
+        {
+          "branch": {
+            "accepted": true,
+            "authority": [
+              "read:notes",
+              "read:sales",
+              "write:report"
+            ],
+            "error": null,
+            "events": [
+              {
+                "allowed": true,
+                "operation": "read:sales"
+              },
+              {
+                "allowed": true,
+                "operation": "write:report"
+              }
+            ],
+            "final_resource_sha256": "579e4823073c297b68c2b9ede5f4eb67f346ce1c713bc24fb83429e486b37dce",
+            "initial_state_sha256": "579e4823073c297b68c2b9ede5f4eb67f346ce1c713bc24fb83429e486b37dce",
+            "oracle_state": "valid",
+            "output": "total=5\n",
+            "probes": {
+              "exec:runtime": false,
+              "read:copy": false,
+              "read:notes": true,
+              "read:sales": true,
+              "tool:a": false,
+              "tool:b": false,
+              "write:report": true
+            },
+            "task_output_matches": true
+          },
+          "naive_witness": true,
+          "removed_grant": "file_read",
+          "removed_operations": [],
+          "retained_grants": [
+            "directory_read"
+          ],
+          "strict_witness": false
+        }
+      ],
+      "dependencies": {},
+      "full": {
+        "accepted": true,
+        "authority": [
+          "read:notes",
+          "read:sales",
+          "write:report"
+        ],
+        "error": null,
+        "events": [
+          {
+            "allowed": true,
+            "operation": "read:sales"
+          },
+          {
+            "allowed": true,
+            "operation": "write:report"
+          }
+        ],
+        "final_resource_sha256": "579e4823073c297b68c2b9ede5f4eb67f346ce1c713bc24fb83429e486b37dce",
+        "initial_state_sha256": "579e4823073c297b68c2b9ede5f4eb67f346ce1c713bc24fb83429e486b37dce",
+        "oracle_state": "valid",
+        "output": "total=5\n",
+        "probes": {
+          "exec:runtime": false,
+          "read:copy": false,
+          "read:notes": true,
+          "read:sales": true,
+          "tool:a": false,
+          "tool:b": false,
+          "write:report": true
+        },
+        "task_output_matches": true
+      },
+      "grants": {
+        "directory_read": [
+          "read:notes",
+          "read:sales"
+        ],
+        "file_read": [
+          "read:sales"
+        ]
+      },
+      "scenario": "overlapping_file_directory"
+    },
+    {
+      "baseline_operations": [
+        "write:report"
+      ],
+      "deletions": [
+        {
+          "branch": {
+            "accepted": true,
+            "authority": [
+              "read:sales",
+              "write:report"
+            ],
+            "error": null,
+            "events": [
+              {
+                "allowed": true,
+                "operation": "read:sales"
+              },
+              {
+                "allowed": true,
+                "operation": "write:report"
+              }
+            ],
+            "final_resource_sha256": "579e4823073c297b68c2b9ede5f4eb67f346ce1c713bc24fb83429e486b37dce",
+            "initial_state_sha256": "579e4823073c297b68c2b9ede5f4eb67f346ce1c713bc24fb83429e486b37dce",
+            "oracle_state": "valid",
+            "output": "total=5\n",
+            "probes": {
+              "exec:runtime": false,
+              "read:copy": false,
+              "read:notes": false,
+              "read:sales": true,
+              "tool:a": false,
+              "tool:b": false,
+              "write:report": true
+            },
+            "task_output_matches": true
+          },
+          "naive_witness": true,
+          "removed_grant": "notes_read",
+          "removed_operations": [
+            "read:notes"
+          ],
+          "retained_grants": [
+            "sales_read"
+          ],
+          "strict_witness": true
+        },
+        {
+          "branch": {
+            "accepted": false,
+            "authority": [
+              "read:notes",
+              "write:report"
+            ],
+            "error": "no readable task input",
+            "events": [
+              {
+                "allowed": false,
+                "operation": "read:sales"
+              }
+            ],
+            "final_resource_sha256": "579e4823073c297b68c2b9ede5f4eb67f346ce1c713bc24fb83429e486b37dce",
+            "initial_state_sha256": "579e4823073c297b68c2b9ede5f4eb67f346ce1c713bc24fb83429e486b37dce",
+            "oracle_state": "valid",
+            "output": null,
+            "probes": {
+              "exec:runtime": false,
+              "read:copy": false,
+              "read:notes": true,
+              "read:sales": false,
+              "tool:a": false,
+              "tool:b": false,
+              "write:report": true
+            },
+            "task_output_matches": false
+          },
+          "naive_witness": false,
+          "removed_grant": "sales_read",
+          "removed_operations": [
+            "read:sales"
+          ],
+          "retained_grants": [
+            "notes_read"
+          ],
+          "strict_witness": false
+        }
+      ],
+      "dependencies": {},
+      "full": {
+        "accepted": true,
+        "authority": [
+          "read:notes",
+          "read:sales",
+          "write:report"
+        ],
+        "error": null,
+        "events": [
+          {
+            "allowed": true,
+            "operation": "read:sales"
+          },
+          {
+            "allowed": true,
+            "operation": "write:report"
+          }
+        ],
+        "final_resource_sha256": "579e4823073c297b68c2b9ede5f4eb67f346ce1c713bc24fb83429e486b37dce",
+        "initial_state_sha256": "579e4823073c297b68c2b9ede5f4eb67f346ce1c713bc24fb83429e486b37dce",
+        "oracle_state": "valid",
+        "output": "total=5\n",
+        "probes": {
+          "exec:runtime": false,
+          "read:copy": false,
+          "read:notes": true,
+          "read:sales": true,
+          "tool:a": false,
+          "tool:b": false,
+          "write:report": true
+        },
+        "task_output_matches": true
+      },
+      "grants": {
+        "notes_read": [
+          "read:notes"
+        ],
+        "sales_read": [
+          "read:sales"
+        ]
+      },
+      "scenario": "optional_read"
+    },
+    {
+      "baseline_operations": [
+        "write:report"
+      ],
+      "deletions": [
+        {
+          "branch": {
+            "accepted": false,
+            "authority": [
+              "write:report"
+            ],
+            "error": "no readable task input",
+            "events": [
+              {
+                "allowed": false,
+                "operation": "read:sales"
+              }
+            ],
+            "final_resource_sha256": "579e4823073c297b68c2b9ede5f4eb67f346ce1c713bc24fb83429e486b37dce",
+            "initial_state_sha256": "579e4823073c297b68c2b9ede5f4eb67f346ce1c713bc24fb83429e486b37dce",
+            "oracle_state": "valid",
+            "output": null,
+            "probes": {
+              "exec:runtime": false,
+              "read:copy": false,
+              "read:notes": false,
+              "read:sales": false,
+              "tool:a": false,
+              "tool:b": false,
+              "write:report": true
+            },
+            "task_output_matches": false
+          },
+          "naive_witness": false,
+          "removed_grant": "sales_read",
+          "removed_operations": [
+            "read:sales"
+          ],
+          "retained_grants": [],
+          "strict_witness": false
+        }
+      ],
+      "dependencies": {},
+      "full": {
+        "accepted": true,
+        "authority": [
+          "read:sales",
+          "write:report"
+        ],
+        "error": null,
+        "events": [
+          {
+            "allowed": true,
+            "operation": "read:sales"
+          },
+          {
+            "allowed": true,
+            "operation": "write:report"
+          }
+        ],
+        "final_resource_sha256": "579e4823073c297b68c2b9ede5f4eb67f346ce1c713bc24fb83429e486b37dce",
+        "initial_state_sha256": "579e4823073c297b68c2b9ede5f4eb67f346ce1c713bc24fb83429e486b37dce",
+        "oracle_state": "valid",
+        "output": "total=5\n",
+        "probes": {
+          "exec:runtime": false,
+          "read:copy": false,
+          "read:notes": false,
+          "read:sales": true,
+          "tool:a": false,
+          "tool:b": false,
+          "write:report": true
+        },
+        "task_output_matches": true
+      },
+      "grants": {
+        "sales_read": [
+          "read:sales"
+        ]
+      },
+      "scenario": "required_input"
+    },
+    {
+      "baseline_operations": [
+        "read:notes",
+        "write:report"
+      ],
+      "deletions": [
+        {
+          "branch": {
+            "accepted": true,
+            "authority": [
+              "read:notes",
+              "read:sales",
+              "write:report"
+            ],
+            "error": null,
+            "events": [
+              {
+                "allowed": true,
+                "operation": "read:sales"
+              },
+              {
+                "allowed": true,
+                "operation": "write:report"
+              }
+            ],
+            "final_resource_sha256": "579e4823073c297b68c2b9ede5f4eb67f346ce1c713bc24fb83429e486b37dce",
+            "initial_state_sha256": "579e4823073c297b68c2b9ede5f4eb67f346ce1c713bc24fb83429e486b37dce",
+            "oracle_state": "valid",
+            "output": "total=5\n",
+            "probes": {
+              "exec:runtime": false,
+              "read:copy": false,
+              "read:notes": true,
+              "read:sales": true,
+              "tool:a": false,
+              "tool:b": false,
+              "write:report": true
+            },
+            "task_output_matches": true
+          },
+          "naive_witness": true,
+          "removed_grant": "notes_read",
+          "removed_operations": [],
+          "retained_grants": [
+            "sales_read"
+          ],
+          "strict_witness": false
+        },
+        {
+          "branch": {
+            "accepted": false,
+            "authority": [
+              "read:notes",
+              "write:report"
+            ],
+            "error": "no readable task input",
+            "events": [
+              {
+                "allowed": false,
+                "operation": "read:sales"
+              }
+            ],
+            "final_resource_sha256": "579e4823073c297b68c2b9ede5f4eb67f346ce1c713bc24fb83429e486b37dce",
+            "initial_state_sha256": "579e4823073c297b68c2b9ede5f4eb67f346ce1c713bc24fb83429e486b37dce",
+            "oracle_state": "valid",
+            "output": null,
+            "probes": {
+              "exec:runtime": false,
+              "read:copy": false,
+              "read:notes": true,
+              "read:sales": false,
+              "tool:a": false,
+              "tool:b": false,
+              "write:report": true
+            },
+            "task_output_matches": false
+          },
+          "naive_witness": false,
+          "removed_grant": "sales_read",
+          "removed_operations": [
+            "read:sales"
+          ],
+          "retained_grants": [
+            "notes_read"
+          ],
+          "strict_witness": false
+        }
+      ],
+      "dependencies": {},
+      "full": {
+        "accepted": true,
+        "authority": [
+          "read:notes",
+          "read:sales",
+          "write:report"
+        ],
+        "error": null,
+        "events": [
+          {
+            "allowed": true,
+            "operation": "read:sales"
+          },
+          {
+            "allowed": true,
+            "operation": "write:report"
+          }
+        ],
+        "final_resource_sha256": "579e4823073c297b68c2b9ede5f4eb67f346ce1c713bc24fb83429e486b37dce",
+        "initial_state_sha256": "579e4823073c297b68c2b9ede5f4eb67f346ce1c713bc24fb83429e486b37dce",
+        "oracle_state": "valid",
+        "output": "total=5\n",
+        "probes": {
+          "exec:runtime": false,
+          "read:copy": false,
+          "read:notes": true,
+          "read:sales": true,
+          "tool:a": false,
+          "tool:b": false,
+          "write:report": true
+        },
+        "task_output_matches": true
+      },
+      "grants": {
+        "notes_read": [
+          "read:notes"
+        ],
+        "sales_read": [
+          "read:sales"
+        ]
+      },
+      "scenario": "baseline_overlap"
+    },
+    {
+      "baseline_operations": [
+        "write:report"
+      ],
+      "deletions": [
+        {
+          "branch": {
+            "accepted": true,
+            "authority": [
+              "exec:runtime",
+              "read:sales",
+              "tool:b",
+              "write:report"
+            ],
+            "error": null,
+            "events": [
+              {
+                "allowed": true,
+                "operation": "tool:b"
+              },
+              {
+                "allowed": true,
+                "operation": "exec:runtime"
+              },
+              {
+                "allowed": true,
+                "operation": "read:sales"
+              },
+              {
+                "allowed": true,
+                "operation": "write:report"
+              }
+            ],
+            "final_resource_sha256": "579e4823073c297b68c2b9ede5f4eb67f346ce1c713bc24fb83429e486b37dce",
+            "initial_state_sha256": "579e4823073c297b68c2b9ede5f4eb67f346ce1c713bc24fb83429e486b37dce",
+            "oracle_state": "valid",
+            "output": "total=5\n",
+            "probes": {
+              "exec:runtime": true,
+              "read:copy": false,
+              "read:notes": false,
+              "read:sales": true,
+              "tool:a": false,
+              "tool:b": true,
+              "write:report": true
+            },
+            "task_output_matches": true
+          },
+          "naive_witness": true,
+          "removed_grant": "tool_a",
+          "removed_operations": [
+            "tool:a"
+          ],
+          "retained_grants": [
+            "tool_b"
+          ],
+          "strict_witness": true
+        },
+        {
+          "branch": {
+            "accepted": true,
+            "authority": [
+              "exec:runtime",
+              "read:sales",
+              "tool:a",
+              "write:report"
+            ],
+            "error": null,
+            "events": [
+              {
+                "allowed": true,
+                "operation": "tool:a"
+              },
+              {
+                "allowed": true,
+                "operation": "exec:runtime"
+              },
+              {
+                "allowed": true,
+                "operation": "read:sales"
+              },
+              {
+                "allowed": true,
+                "operation": "write:report"
+              }
+            ],
+            "final_resource_sha256": "579e4823073c297b68c2b9ede5f4eb67f346ce1c713bc24fb83429e486b37dce",
+            "initial_state_sha256": "579e4823073c297b68c2b9ede5f4eb67f346ce1c713bc24fb83429e486b37dce",
+            "oracle_state": "valid",
+            "output": "total=5\n",
+            "probes": {
+              "exec:runtime": true,
+              "read:copy": false,
+              "read:notes": false,
+              "read:sales": true,
+              "tool:a": true,
+              "tool:b": false,
+              "write:report": true
+            },
+            "task_output_matches": true
+          },
+          "naive_witness": true,
+          "removed_grant": "tool_b",
+          "removed_operations": [
+            "tool:b"
+          ],
+          "retained_grants": [
+            "tool_a"
+          ],
+          "strict_witness": true
+        }
+      ],
+      "dependencies": {
+        "tool:a": [
+          "exec:runtime",
+          "read:sales"
+        ],
+        "tool:b": [
+          "exec:runtime",
+          "read:sales"
+        ]
+      },
+      "full": {
+        "accepted": true,
+        "authority": [
+          "exec:runtime",
+          "read:sales",
+          "tool:a",
+          "tool:b",
+          "write:report"
+        ],
+        "error": null,
+        "events": [
+          {
+            "allowed": true,
+            "operation": "tool:a"
+          },
+          {
+            "allowed": true,
+            "operation": "exec:runtime"
+          },
+          {
+            "allowed": true,
+            "operation": "read:sales"
+          },
+          {
+            "allowed": true,
+            "operation": "write:report"
+          }
+        ],
+        "final_resource_sha256": "579e4823073c297b68c2b9ede5f4eb67f346ce1c713bc24fb83429e486b37dce",
+        "initial_state_sha256": "579e4823073c297b68c2b9ede5f4eb67f346ce1c713bc24fb83429e486b37dce",
+        "oracle_state": "valid",
+        "output": "total=5\n",
+        "probes": {
+          "exec:runtime": true,
+          "read:copy": false,
+          "read:notes": false,
+          "read:sales": true,
+          "tool:a": true,
+          "tool:b": true,
+          "write:report": true
+        },
+        "task_output_matches": true
+      },
+      "grants": {
+        "tool_a": [
+          "tool:a"
+        ],
+        "tool_b": [
+          "tool:b"
+        ]
+      },
+      "scenario": "shared_dependency"
+    },
+    {
+      "baseline_operations": [
+        "write:report"
+      ],
+      "deletions": [
+        {
+          "branch": {
+            "accepted": true,
+            "authority": [
+              "read:sales",
+              "write:report"
+            ],
+            "error": null,
+            "events": [
+              {
+                "allowed": true,
+                "operation": "read:sales"
+              },
+              {
+                "allowed": true,
+                "operation": "write:report"
+              }
+            ],
+            "final_resource_sha256": "579e4823073c297b68c2b9ede5f4eb67f346ce1c713bc24fb83429e486b37dce",
+            "initial_state_sha256": "579e4823073c297b68c2b9ede5f4eb67f346ce1c713bc24fb83429e486b37dce",
+            "oracle_state": "valid",
+            "output": "total=5\n",
+            "probes": {
+              "exec:runtime": false,
+              "read:copy": false,
+              "read:notes": false,
+              "read:sales": true,
+              "tool:a": false,
+              "tool:b": false,
+              "write:report": true
+            },
+            "task_output_matches": true
+          },
+          "naive_witness": true,
+          "removed_grant": "backup",
+          "removed_operations": [
+            "read:copy"
+          ],
+          "retained_grants": [
+            "primary"
+          ],
+          "strict_witness": true
+        },
+        {
+          "branch": {
+            "accepted": true,
+            "authority": [
+              "read:copy",
+              "write:report"
+            ],
+            "error": null,
+            "events": [
+              {
+                "allowed": false,
+                "operation": "read:sales"
+              },
+              {
+                "allowed": true,
+                "operation": "read:copy"
+              },
+              {
+                "allowed": true,
+                "operation": "write:report"
+              }
+            ],
+            "final_resource_sha256": "579e4823073c297b68c2b9ede5f4eb67f346ce1c713bc24fb83429e486b37dce",
+            "initial_state_sha256": "579e4823073c297b68c2b9ede5f4eb67f346ce1c713bc24fb83429e486b37dce",
+            "oracle_state": "valid",
+            "output": "total=5\n",
+            "probes": {
+              "exec:runtime": false,
+              "read:copy": true,
+              "read:notes": false,
+              "read:sales": false,
+              "tool:a": false,
+              "tool:b": false,
+              "write:report": true
+            },
+            "task_output_matches": true
+          },
+          "naive_witness": true,
+          "removed_grant": "primary",
+          "removed_operations": [
+            "read:sales"
+          ],
+          "retained_grants": [
+            "backup"
+          ],
+          "strict_witness": true
+        }
+      ],
+      "dependencies": {},
+      "full": {
+        "accepted": true,
+        "authority": [
+          "read:copy",
+          "read:sales",
+          "write:report"
+        ],
+        "error": null,
+        "events": [
+          {
+            "allowed": true,
+            "operation": "read:sales"
+          },
+          {
+            "allowed": true,
+            "operation": "write:report"
+          }
+        ],
+        "final_resource_sha256": "579e4823073c297b68c2b9ede5f4eb67f346ce1c713bc24fb83429e486b37dce",
+        "initial_state_sha256": "579e4823073c297b68c2b9ede5f4eb67f346ce1c713bc24fb83429e486b37dce",
+        "oracle_state": "valid",
+        "output": "total=5\n",
+        "probes": {
+          "exec:runtime": false,
+          "read:copy": true,
+          "read:notes": false,
+          "read:sales": true,
+          "tool:a": false,
+          "tool:b": false,
+          "write:report": true
+        },
+        "task_output_matches": true
+      },
+      "grants": {
+        "backup": [
+          "read:copy"
+        ],
+        "primary": [
+          "read:sales"
+        ]
+      },
+      "scenario": "alternative_inputs"
+    },
+    {
+      "baseline_operations": [
+        "write:report"
+      ],
+      "deletions": [
+        {
+          "branch": {
+            "accepted": true,
+            "authority": [
+              "read:sales",
+              "write:report"
+            ],
+            "error": null,
+            "events": [
+              {
+                "allowed": true,
+                "operation": "read:sales"
+              },
+              {
+                "allowed": true,
+                "operation": "write:report"
+              }
+            ],
+            "final_resource_sha256": "579e4823073c297b68c2b9ede5f4eb67f346ce1c713bc24fb83429e486b37dce",
+            "initial_state_sha256": "579e4823073c297b68c2b9ede5f4eb67f346ce1c713bc24fb83429e486b37dce",
+            "oracle_state": "valid",
+            "output": "total=5\n",
+            "probes": {
+              "exec:runtime": false,
+              "read:copy": false,
+              "read:notes": false,
+              "read:sales": true,
+              "tool:a": false,
+              "tool:b": false,
+              "write:report": true
+            },
+            "task_output_matches": true
+          },
+          "naive_witness": true,
+          "removed_grant": "notes_read",
+          "removed_operations": [
+            "read:notes"
+          ],
+          "retained_grants": [
+            "sales_read"
+          ],
+          "strict_witness": false
+        },
+        {
+          "branch": {
+            "accepted": false,
+            "authority": [
+              "read:notes",
+              "write:report"
+            ],
+            "error": "no readable task input",
+            "events": [
+              {
+                "allowed": false,
+                "operation": "read:sales"
+              }
+            ],
+            "final_resource_sha256": "579e4823073c297b68c2b9ede5f4eb67f346ce1c713bc24fb83429e486b37dce",
+            "initial_state_sha256": "579e4823073c297b68c2b9ede5f4eb67f346ce1c713bc24fb83429e486b37dce",
+            "oracle_state": "valid",
+            "output": null,
+            "probes": {
+              "exec:runtime": false,
+              "read:copy": false,
+              "read:notes": true,
+              "read:sales": false,
+              "tool:a": false,
+              "tool:b": false,
+              "write:report": true
+            },
+            "task_output_matches": false
+          },
+          "naive_witness": false,
+          "removed_grant": "sales_read",
+          "removed_operations": [
+            "read:sales"
+          ],
+          "retained_grants": [
+            "notes_read"
+          ],
+          "strict_witness": false
+        }
+      ],
+      "dependencies": {},
+      "full": {
+        "accepted": false,
+        "authority": [
+          "read:notes",
+          "read:sales",
+          "write:report"
+        ],
+        "error": null,
+        "events": [
+          {
+            "allowed": true,
+            "operation": "read:sales"
+          },
+          {
+            "allowed": true,
+            "operation": "write:report"
+          }
+        ],
+        "final_resource_sha256": "579e4823073c297b68c2b9ede5f4eb67f346ce1c713bc24fb83429e486b37dce",
+        "initial_state_sha256": "579e4823073c297b68c2b9ede5f4eb67f346ce1c713bc24fb83429e486b37dce",
+        "oracle_state": "missing",
+        "output": "total=5\n",
+        "probes": {
+          "exec:runtime": false,
+          "read:copy": false,
+          "read:notes": true,
+          "read:sales": true,
+          "tool:a": false,
+          "tool:b": false,
+          "write:report": true
+        },
+        "task_output_matches": true
+      },
+      "grants": {
+        "notes_read": [
+          "read:notes"
+        ],
+        "sales_read": [
+          "read:sales"
+        ]
+      },
+      "scenario": "missing_baseline_oracle"
+    },
+    {
+      "baseline_operations": [
+        "write:report"
+      ],
+      "deletions": [
+        {
+          "branch": {
+            "accepted": false,
+            "authority": [
+              "read:sales",
+              "write:report"
+            ],
+            "error": null,
+            "events": [
+              {
+                "allowed": true,
+                "operation": "read:sales"
+              },
+              {
+                "allowed": true,
+                "operation": "write:report"
+              }
+            ],
+            "final_resource_sha256": "579e4823073c297b68c2b9ede5f4eb67f346ce1c713bc24fb83429e486b37dce",
+            "initial_state_sha256": "579e4823073c297b68c2b9ede5f4eb67f346ce1c713bc24fb83429e486b37dce",
+            "oracle_state": "invalid",
+            "output": "total=5\n",
+            "probes": {
+              "exec:runtime": false,
+              "read:copy": false,
+              "read:notes": false,
+              "read:sales": true,
+              "tool:a": false,
+              "tool:b": false,
+              "write:report": true
+            },
+            "task_output_matches": true
+          },
+          "naive_witness": false,
+          "removed_grant": "notes_read",
+          "removed_operations": [
+            "read:notes"
+          ],
+          "retained_grants": [
+            "sales_read"
+          ],
+          "strict_witness": false
+        },
+        {
+          "branch": {
+            "accepted": false,
+            "authority": [
+              "read:notes",
+              "write:report"
+            ],
+            "error": "no readable task input",
+            "events": [
+              {
+                "allowed": false,
+                "operation": "read:sales"
+              }
+            ],
+            "final_resource_sha256": "579e4823073c297b68c2b9ede5f4eb67f346ce1c713bc24fb83429e486b37dce",
+            "initial_state_sha256": "579e4823073c297b68c2b9ede5f4eb67f346ce1c713bc24fb83429e486b37dce",
+            "oracle_state": "invalid",
+            "output": null,
+            "probes": {
+              "exec:runtime": false,
+              "read:copy": false,
+              "read:notes": true,
+              "read:sales": false,
+              "tool:a": false,
+              "tool:b": false,
+              "write:report": true
+            },
+            "task_output_matches": false
+          },
+          "naive_witness": false,
+          "removed_grant": "sales_read",
+          "removed_operations": [
+            "read:sales"
+          ],
+          "retained_grants": [
+            "notes_read"
+          ],
+          "strict_witness": false
+        }
+      ],
+      "dependencies": {},
+      "full": {
+        "accepted": true,
+        "authority": [
+          "read:notes",
+          "read:sales",
+          "write:report"
+        ],
+        "error": null,
+        "events": [
+          {
+            "allowed": true,
+            "operation": "read:sales"
+          },
+          {
+            "allowed": true,
+            "operation": "write:report"
+          }
+        ],
+        "final_resource_sha256": "579e4823073c297b68c2b9ede5f4eb67f346ce1c713bc24fb83429e486b37dce",
+        "initial_state_sha256": "579e4823073c297b68c2b9ede5f4eb67f346ce1c713bc24fb83429e486b37dce",
+        "oracle_state": "valid",
+        "output": "total=5\n",
+        "probes": {
+          "exec:runtime": false,
+          "read:copy": false,
+          "read:notes": true,
+          "read:sales": true,
+          "tool:a": false,
+          "tool:b": false,
+          "write:report": true
+        },
+        "task_output_matches": true
+      },
+      "grants": {
+        "notes_read": [
+          "read:notes"
+        ],
+        "sales_read": [
+          "read:sales"
+        ]
+      },
+      "scenario": "invalid_branch_oracle"
+    },
+    {
+      "baseline_operations": [
+        "write:report"
+      ],
+      "deletions": [
+        {
+          "branch": {
+            "accepted": true,
+            "authority": [
+              "read:sales",
+              "write:report"
+            ],
+            "error": null,
+            "events": [
+              {
+                "allowed": true,
+                "operation": "read:sales"
+              },
+              {
+                "allowed": true,
+                "operation": "write:report"
+              }
+            ],
+            "final_resource_sha256": "579e4823073c297b68c2b9ede5f4eb67f346ce1c713bc24fb83429e486b37dce",
+            "initial_state_sha256": "579e4823073c297b68c2b9ede5f4eb67f346ce1c713bc24fb83429e486b37dce",
+            "oracle_state": "valid",
+            "output": "total=5\n",
+            "probes": {
+              "exec:runtime": false,
+              "read:copy": false,
+              "read:notes": false,
+              "read:sales": true,
+              "tool:a": false,
+              "tool:b": false,
+              "write:report": true
+            },
+            "task_output_matches": true
+          },
+          "naive_witness": true,
+          "removed_grant": "notes_read",
+          "removed_operations": [
+            "read:notes"
+          ],
+          "retained_grants": [
+            "sales_read"
+          ],
+          "strict_witness": false
+        },
+        {
+          "branch": {
+            "accepted": false,
+            "authority": [
+              "read:notes",
+              "write:report"
+            ],
+            "error": "no readable task input",
+            "events": [
+              {
+                "allowed": false,
+                "operation": "read:sales"
+              }
+            ],
+            "final_resource_sha256": "579e4823073c297b68c2b9ede5f4eb67f346ce1c713bc24fb83429e486b37dce",
+            "initial_state_sha256": "579e4823073c297b68c2b9ede5f4eb67f346ce1c713bc24fb83429e486b37dce",
+            "oracle_state": "valid",
+            "output": null,
+            "probes": {
+              "exec:runtime": false,
+              "read:copy": false,
+              "read:notes": true,
+              "read:sales": false,
+              "tool:a": false,
+              "tool:b": false,
+              "write:report": true
+            },
+            "task_output_matches": false
+          },
+          "naive_witness": false,
+          "removed_grant": "sales_read",
+          "removed_operations": [
+            "read:sales"
+          ],
+          "retained_grants": [
+            "notes_read"
+          ],
+          "strict_witness": false
+        }
+      ],
+      "dependencies": {},
+      "full": {
+        "accepted": false,
+        "authority": [
+          "read:notes",
+          "read:sales",
+          "write:report"
+        ],
+        "error": null,
+        "events": [
+          {
+            "allowed": true,
+            "operation": "read:sales"
+          },
+          {
+            "allowed": true,
+            "operation": "write:report"
+          }
+        ],
+        "final_resource_sha256": "579e4823073c297b68c2b9ede5f4eb67f346ce1c713bc24fb83429e486b37dce",
+        "initial_state_sha256": "579e4823073c297b68c2b9ede5f4eb67f346ce1c713bc24fb83429e486b37dce",
+        "oracle_state": "valid",
+        "output": "total=6\n",
+        "probes": {
+          "exec:runtime": false,
+          "read:copy": false,
+          "read:notes": true,
+          "read:sales": true,
+          "tool:a": false,
+          "tool:b": false,
+          "write:report": true
+        },
+        "task_output_matches": false
+      },
+      "grants": {
+        "notes_read": [
+          "read:notes"
+        ],
+        "sales_read": [
+          "read:sales"
+        ]
+      },
+      "scenario": "failed_baseline_task"
+    }
+  ],
+  "schema_version": 1,
+  "scope": "independent synthetic finite-authority model; no OS sandbox, model or source implementation",
+  "summary": {
+    "baseline_runs": 9,
+    "false_witness_labels": 4,
+    "independent_deletions": 17,
+    "joint_counterfactual_runs": 1,
+    "naive_witnesses": 10,
+    "scenario_families": 9,
+    "strict_witnesses": 6
+  }
+}
